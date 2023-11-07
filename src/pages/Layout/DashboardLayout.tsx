@@ -54,7 +54,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   };
    
   useEffect(() => {
-    // A short delay of 500 milliseconds
+    
     const timer = setTimeout(() => setIsLoading(false), 1000);
 
     return () => clearTimeout(timer);
