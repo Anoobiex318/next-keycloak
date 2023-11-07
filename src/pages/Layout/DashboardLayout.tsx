@@ -20,7 +20,7 @@ import MenuIcon from '@mui/icons-material/Menu'; // Hamburger icon
 import HomeIcon from '@mui/icons-material/Home';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { signOut, useSession } from 'next-auth/react';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 interface DashboardLayoutProps {
@@ -93,11 +93,11 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography variant="subtitle1" noWrap component="div" sx={{ margin: '0 10px' }}>
-              {session?.user?.keycloakUsername ?? 'Unknown User'}
+             Welcome: <strong>{session?.user?.keycloakUsername ?? 'Unknown User'}</strong> 
             </Typography>
             <Button color="inherit" onClick={handleSignOut}>
             <Tooltip title="Sign Out">
-             <ExitToAppIcon/>
+             <LogoutIcon/>
              </Tooltip>
             </Button>
           </Box>
